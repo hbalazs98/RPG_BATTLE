@@ -74,11 +74,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Hős mentése"
+        android:id="@+id/saveHero"
+        android:onClick="save"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kép kiválasztása"
+        android:id="@+id/chooseImage"
         android:layout_below="@+id/faction"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:text="Hős mentése"
-        android:id="@+id/saveHero"
-        android:onClick="save" />
+        android:onClick="callChooseImage"/>
 
 </RelativeLayout>

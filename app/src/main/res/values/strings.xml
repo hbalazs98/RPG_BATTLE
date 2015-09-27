@@ -82,4 +82,5 @@
         <item>Yet</item>
         <item>.</item>
     </string-array>
+    <string name="title_activity_choose_image">Kép kiválasztása</string>
 </resources>
