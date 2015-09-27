@@ -17,6 +17,12 @@ public class newHero extends Activity {
         setContentView(R.layout.newhero);
     }
 
+    public void callChooseImage()
+    {
+        Intent intent = new Intent(this, chooseImage.class);
+        startActivity(intent);
+    }
+
     public void save(View v)
     {
         boolean faction;
@@ -42,7 +48,6 @@ public class newHero extends Activity {
                 Integer.parseInt(defText.getText().toString()),
                 faction,
                 R.drawable.dahero);
-        // TODO faction dolgokat beírni
         // TODO kép kiválasztása
         MainActivity.heroList.add(tempHero);
         Intent intent = new Intent(this, MainActivity.class);
