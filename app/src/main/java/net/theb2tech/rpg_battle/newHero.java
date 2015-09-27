@@ -19,19 +19,28 @@ public class newHero extends Activity {
 
     public void save(View v)
     {
+        boolean faction;
         EditText nameText = (EditText) findViewById(R.id.hero_name);
         EditText hpText = (EditText) findViewById(R.id.hero_hp);
         EditText manaText = (EditText) findViewById(R.id.hero_sp);
         EditText wpnDmgText = (EditText) findViewById(R.id.hero_weapondamage);
         EditText defText = (EditText) findViewById(R.id.hero_defense);
         Spinner factionDrop = (Spinner) findViewById(R.id.faction);
+        if (factionDrop.getSelectedItem().toString() == "Horde")
+        {
+            faction = false;
+        }
+        else
+        {
+            faction = true;
+        }
 
         hero tempHero = new hero(nameText.getText().toString(),
                 Integer.parseInt(hpText.getText().toString()),
                 Integer.parseInt(manaText.getText().toString()),
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),
-                false,
+                faction,
                 R.drawable.dahero);
         // TODO faction dolgokat beírni
         // TODO kép kiválasztása
