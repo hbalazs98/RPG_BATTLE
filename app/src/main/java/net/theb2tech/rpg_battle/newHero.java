@@ -14,9 +14,4 @@ public class newHero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newhero);
     }
-
-    public void editTextClick(View v){
-        EditText editttext = (EditText) v;
-        editttext.setText("");
-    }
 }
