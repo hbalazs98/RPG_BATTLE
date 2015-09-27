@@ -11,8 +11,75 @@
     <string name="currentHeroes">Jelenlegi hősök</string>
     <string name="noHeroesYet">Még nincs hős.</string>
     <string name="newHero">Új hős</string>
+    <string name="intobattle">Harc</string>
     <string-array name="factions">
         <item>Alliance</item>
         <item>Horde</item>
+    </string-array>
+    <string-array name="noHeroesYet">
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
+        <item>No</item>
+        <item>Heroes</item>
+        <item>Yet</item>
+        <item>.</item>
     </string-array>
 </resources>

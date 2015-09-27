@@ -16,17 +16,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/noHeroesYet"
-        android:id="@+id/current_heroes"
-        android:layout_below="@+id/heroes_title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/btn_newhero" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +23,22 @@
         android:id="@+id/btn_newhero"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/current_heroes"
         android:onClick="buttonOnClick" />
+
+    <ListView
+        android:entries="@array/noHeroesYet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/heroes_title"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btn_newhero" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intobattle"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

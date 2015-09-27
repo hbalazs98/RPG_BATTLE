@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import java.util.List;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,4 +49,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
+
+
 }

@@ -15,6 +15,8 @@ public class newHero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newhero);
     }
+<<<<<<< HEAD
+=======
 
     public void save(View v)
     {
@@ -33,4 +35,5 @@ public class newHero extends Activity {
                 false);
         MainActivity.heroList.add(tempHero);
     }
+>>>>>>> origin/master
 }
