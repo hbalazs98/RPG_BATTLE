@@ -16,7 +16,7 @@ public class newHero extends Activity {
         setContentView(R.layout.newhero);
     }
 
-    public void save()
+    public void save(View v)
     {
         EditText nameText = (EditText) findViewById(R.id.hero_name);
         EditText hpText = (EditText) findViewById(R.id.hero_hp);
