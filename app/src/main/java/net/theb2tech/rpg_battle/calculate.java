@@ -10,29 +10,29 @@ public class calculate {
 
     public int dmg(hero attacker)
     {
-        if (attacker.mana == 0) {
-            return attacker.wpnDmg * (rand.nextInt(45) + 70) / 10;
+        if (attacker.getMana() == 0) {
+            return attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
         }
         else {
             if (rand.nextBoolean())
             {
-                if (attacker.mana > 5) {
-                    attacker.mana-=5;
-                    return (attacker.wpnDmg * (rand.nextInt(45) + 70) / 10) * (1 + (5/5));
+                if (attacker.getMana() > 5) {
+                    attacker.setMana(attacker.getMana()-5);
+                    return (attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10) * (1 + (5/5));
                 }
                 else {
-                    int manaUsed = attacker.mana;
-                    return (attacker.wpnDmg * (rand.nextInt(45) + 70) / 10) * (1 + (manaUsed/5));
+                    int manaUsed = attacker.getMana();
+                    return (attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10) * (1 + (manaUsed/5));
                 }
             }
             else {
-                return attacker.wpnDmg * (rand.nextInt(45) + 70) / 10;
+                return attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
             }
         }
     }
 
     public double defence(hero defender)
     {
-        return (defender.def)*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
+        return (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
     }
 }

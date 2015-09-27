@@ -26,7 +26,6 @@
         android:onClick="buttonOnClick" />
 
     <ListView
-        android:entries="@array/noHeroesYet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/current_heroes"
