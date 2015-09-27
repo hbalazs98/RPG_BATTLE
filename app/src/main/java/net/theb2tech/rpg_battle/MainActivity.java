@@ -1,5 +1,6 @@
 package net.theb2tech.rpg_battle;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonOnClick(View v){
-        Button btn_newhero = (Button) v;
-        ((Button)v).setText("clicked");
+        Intent intent = new Intent(this, hero.class);
+        startActivity(intent);
     }
 }
