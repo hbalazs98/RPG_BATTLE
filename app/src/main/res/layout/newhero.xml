@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Hős neve"
+        android:text="@string/heroName"
         android:ems="10"
         android:id="@+id/hero_name"
         android:layout_alignParentTop="true"
@@ -26,7 +26,7 @@
         android:layout_below="@+id/hero_name"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/hero_name"
-        android:text="Hős életereje" />
+        android:text="@string/heroHp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/hero_sp"
-        android:text="Hős varázsereje"
+        android:text="@string/heroMana"
         android:layout_below="@+id/hero_hp"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/hero_hp" />
@@ -45,7 +45,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/hero_weapondamage"
-        android:text="Hős fegyverének sebzése"
+        android:text="@string/heroDmg"
         android:layout_below="@+id/hero_sp"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/hero_sp" />
@@ -56,7 +56,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/hero_defense"
-        android:text="Hős védelmi képessége"
+        android:text="@string/heroDef"
         android:layout_below="@+id/hero_weapondamage"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/hero_weapondamage" />

@@ -3,6 +3,14 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="heroName">Hős neve</string>
+    <string name="heroHp">Hős életereje</string>
+    <string name="heroMana">Hős varázsereje</string>
+    <string name="heroDmg">Hős fegyverének sebzése</string>
+    <string name="heroDef">Hős védelmi képessége</string>
+    <string name="currentHeroes">Jelenlegi hősök</string>
+    <string name="noHeroesYet">Még nincs hős.</string>
+    <string name="newHero">Új hős</string>
     <string-array name="factions">
         <item>Alliance</item>
         <item>Horde</item>
