@@ -22,6 +22,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
