@@ -24,6 +24,7 @@ public class newHero extends Activity {
         EditText wpnDmgText = (EditText) findViewById(R.id.hero_weapondamage);
         EditText defText = (EditText) findViewById(R.id.hero_defense);
         Spinner factionDrop = (Spinner) findViewById(R.id.faction);
+
         hero tempHero = new hero(nameText.getText().toString(),
                 Integer.parseInt(hpText.getText().toString()),
                 Integer.parseInt(manaText.getText().toString()),
@@ -31,10 +32,5 @@ public class newHero extends Activity {
                 Integer.parseInt(defText.getText().toString()),
                 false);
         MainActivity.heroList.add(tempHero);
-    }
-
-    public void editTextClick(View v){
-        EditText editttext = (EditText) v;
-        editttext.setText("");
     }
 }
