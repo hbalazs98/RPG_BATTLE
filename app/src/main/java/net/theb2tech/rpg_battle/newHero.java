@@ -1,6 +1,7 @@
 package net.theb2tech.rpg_battle;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -15,8 +16,6 @@ public class newHero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newhero);
     }
-<<<<<<< HEAD
-=======
 
     public void save(View v)
     {
@@ -33,7 +32,10 @@ public class newHero extends Activity {
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),
                 false);
+        // TODO faction dolgokat beírni
         MainActivity.heroList.add(tempHero);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
->>>>>>> origin/master
 }

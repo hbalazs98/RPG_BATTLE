@@ -7,9 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.util.List;
+
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,6 +26,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+        populateListView();
+        testClick();
+    }
+
+    private void testClick() {
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = (TextView) view;
+                String uzenet = textView.getText().toString();
+                Toast.makeText(MainActivity.this, uzenet, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void populateListView() {
+        String[] dolgok = {"black", "green", "purple", "red"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                R.layout.test_listview_textview,
+                dolgok);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
     }
 
     @Override
