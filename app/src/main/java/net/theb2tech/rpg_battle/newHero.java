@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 /**
  * Created by Balázs on 2015. 09. 27..
@@ -14,4 +15,25 @@ public class newHero extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newhero);
     }
+<<<<<<< HEAD
+=======
+
+    public void save(View v)
+    {
+        EditText nameText = (EditText) findViewById(R.id.hero_name);
+        EditText hpText = (EditText) findViewById(R.id.hero_hp);
+        EditText manaText = (EditText) findViewById(R.id.hero_sp);
+        EditText wpnDmgText = (EditText) findViewById(R.id.hero_weapondamage);
+        EditText defText = (EditText) findViewById(R.id.hero_defense);
+        Spinner factionDrop = (Spinner) findViewById(R.id.faction);
+
+        hero tempHero = new hero(nameText.getText().toString(),
+                Integer.parseInt(hpText.getText().toString()),
+                Integer.parseInt(manaText.getText().toString()),
+                Integer.parseInt(wpnDmgText.getText().toString()),
+                Integer.parseInt(defText.getText().toString()),
+                false);
+        MainActivity.heroList.add(tempHero);
+    }
+>>>>>>> origin/master
 }
