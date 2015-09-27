@@ -8,31 +8,51 @@ import java.util.Random;
 public class calculate {
     Random rand = new Random();
 
-    public int dmg(hero attacker)
+    public double dmg(hero attacker)
     {
         if (attacker.getMana() == 0) {
-            return attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
+            return attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
         }
         else {
             if (rand.nextBoolean())
             {
                 if (attacker.getMana() > 5) {
                     attacker.setMana(attacker.getMana()-5);
-                    return (attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10) * (1 + (5/5));
+                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (5/5));
                 }
                 else {
                     int manaUsed = attacker.getMana();
-                    return (attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10) * (1 + (manaUsed/5));
+                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (manaUsed/5));
                 }
             }
             else {
-                return attacker.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
+                return attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
             }
         }
     }
 
     public double defence(hero defender)
     {
-        return (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
+        double herodef = (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
+        if (defender.getMana() == 0) {
+            //return defender.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
+        }
+        else {
+            if (rand.nextBoolean())
+            {
+                if (defender.getMana() > 5) {
+                    defender.setMana(defender.getMana()-5);
+                    return (herodef) * (1+(defender.getMana()/2.5));
+                }
+                else {
+                    int manaUsed = defender.getMana();
+                    return (herodef) * (1+(defender.getMana()/2.5)) * (1 + (manaUsed/5));
+                }
+            }
+            else {
+                return herodef;
+            }
+        }
+        //return
     }
 }
