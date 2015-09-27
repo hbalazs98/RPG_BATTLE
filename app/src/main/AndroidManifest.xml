@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".hero"
+            android:name=".newHero"
             android:label="@string/app_name">
         </activity>
     </application>
