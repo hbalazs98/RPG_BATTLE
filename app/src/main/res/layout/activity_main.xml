@@ -40,6 +40,5 @@
         android:text="@string/intobattle"
         android:id="@+id/btn_intobattle"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="intobattle" />
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
