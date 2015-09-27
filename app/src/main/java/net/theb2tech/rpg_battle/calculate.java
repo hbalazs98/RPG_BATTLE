@@ -33,6 +33,6 @@ public class calculate {
 
     public double defence(hero defender)
     {
-        return (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
+        return (defender.def)*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
     }
 }
