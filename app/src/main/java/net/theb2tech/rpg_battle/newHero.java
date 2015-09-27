@@ -34,11 +34,7 @@ public class newHero extends Activity {
                 false);
         // TODO faction dolgokat beírni
         MainActivity.heroList.add(tempHero);
-
-<<<<<<< HEAD
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-=======
->>>>>>> origin/master
     }
 }
