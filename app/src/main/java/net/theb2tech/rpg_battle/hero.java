@@ -15,6 +15,7 @@ public class hero extends Activity{
         setContentView(R.layout.newhero);
 
     }
+
     public String name;
     public int hp;
     public int mana;

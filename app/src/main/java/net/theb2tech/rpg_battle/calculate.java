@@ -30,4 +30,9 @@ public class calculate {
             }
         }
     }
+
+    public int defence(hero defender)
+    {
+        return  0;
+    }
 }
