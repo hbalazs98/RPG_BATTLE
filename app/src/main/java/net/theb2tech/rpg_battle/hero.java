@@ -32,7 +32,6 @@ public class hero extends Activity{
     }
 
     public void editTextClick(View v){
-        EditText editttext = (EditText) v;
-        editttext.setText("");
+
     }
 }
