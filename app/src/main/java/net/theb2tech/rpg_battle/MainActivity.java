@@ -27,23 +27,15 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.current_heroes);
         populateListView();
-        testClick();
+        //createDefaultHero();
     }
 
-    private void testClick() {
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textView = (TextView) view;
-                String uzenet = textView.getText().toString();
-                Toast.makeText(MainActivity.this, uzenet, Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void createDefaultHero()
+    {
+        heroList.add(new hero("Test",1,1,1,1,false,R.drawable.dahero));
     }
 
     private void populateListView() {
-        heroList.add(new hero("Test",1,1,1,1,false,R.drawable.dahero));
         ArrayAdapter<hero> adapter = new listAdapter();
         ListView listView = (ListView) findViewById(R.id.current_heroes);
         listView.setAdapter(adapter);

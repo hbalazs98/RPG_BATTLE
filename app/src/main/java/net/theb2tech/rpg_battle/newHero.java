@@ -34,6 +34,7 @@ public class newHero extends Activity {
                 false,
                 R.drawable.dahero);
         // TODO faction dolgokat beírni
+        // TODO kép kiválasztása
         MainActivity.heroList.add(tempHero);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
