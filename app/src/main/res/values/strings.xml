@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RPG-Battle</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="factions">
+        <item>Alliance</item>
+        <item>Horde</item>
+    </string-array>
+</resources>

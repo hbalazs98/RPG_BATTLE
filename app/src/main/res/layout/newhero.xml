@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewHero">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Hős neve"
+        android:ems="10"
+        android:id="@+id/hero_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hero_hp"
+        android:layout_below="@+id/hero_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/hero_name"
+        android:text="Hős életereje" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hero_sp"
+        android:text="Hős varázsereje"
+        android:layout_below="@+id/hero_hp"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/hero_hp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hero_weapondamage"
+        android:text="Hős fegyverének sebzése"
+        android:layout_below="@+id/hero_sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/hero_sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hero_defense"
+        android:text="Hős védelmi képessége"
+        android:layout_below="@+id/hero_weapondamage"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/hero_weapondamage" />
+
+    <Spinner
+        android:entries="@array/factions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/faction"
+        android:spinnerMode="dropdown" />
+
+</LinearLayout>
