@@ -12,6 +12,6 @@ public class calculate {
             Random rand = new Random();
             return attacker.wpnDmg * (rand.nextInt(45) + 70) / 10;
         }
-        
+        return  0;
     }
 }
