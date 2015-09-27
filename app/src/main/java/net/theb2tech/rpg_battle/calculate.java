@@ -20,8 +20,9 @@ public class calculate {
                     attacker.mana-=5;
                     return (attacker.wpnDmg * (rand.nextInt(45) + 70) / 10) * (1 + (5/5));
                 }
-                else
+                return 0;
             }
         }
+        return 0;
     }
 }
