@@ -31,7 +31,8 @@ public class newHero extends Activity {
                 Integer.parseInt(manaText.getText().toString()),
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),
-                false);
+                false,
+                R.drawable.dahero);
         // TODO faction dolgokat beírni
         MainActivity.heroList.add(tempHero);
         Intent intent = new Intent(this, MainActivity.class);

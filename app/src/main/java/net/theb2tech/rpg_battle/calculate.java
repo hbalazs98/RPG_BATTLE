@@ -18,11 +18,11 @@ public class calculate {
             {
                 if (attacker.getMana() > 5) {
                     attacker.setMana(attacker.getMana()-5);
-                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (5/5));
+                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (5/5)));
                 }
                 else {
                     int manaUsed = attacker.getMana();
-                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (manaUsed/5));
+                    return (attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10 * (1 + (manaUsed/5)));
                 }
             }
             else {
@@ -53,6 +53,6 @@ public class calculate {
                 return herodef;
             }
         }
-        //return
+        return 0;
     }
 }
