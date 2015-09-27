@@ -17,11 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +79,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
-
-
 }

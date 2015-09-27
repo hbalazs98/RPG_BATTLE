@@ -31,8 +31,8 @@ public class calculate {
         }
     }
 
-    public int defence(hero defender)
+    public double defence(hero defender)
     {
-        return  0;
+        return (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
     }
 }
