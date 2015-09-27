@@ -3,25 +3,23 @@ package net.theb2tech.rpg_battle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import java.util.List;
 
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,54 +27,57 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.current_heroes);
         populateListView();
-        testClick();
+        //createDefaultHero();
     }
 
-    private void testClick() {
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textView = (TextView) view;
-                String uzenet = textView.getText().toString();
-                Toast.makeText(MainActivity.this, uzenet, Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void createDefaultHero()
+    {
+        heroList.add(new hero("Test",1,1,1,1,false,R.drawable.dahero));
     }
 
     private void populateListView() {
-        String[] dolgok = {"black", "green", "purple", "red"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.test_listview_textview,
-                dolgok);
+        ArrayAdapter<hero> adapter = new listAdapter();
         ListView listView = (ListView) findViewById(R.id.current_heroes);
         listView.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void buttonOnClick(View v){
+    public void callNewHero(View v){
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
+    }
+
+    private class listAdapter extends ArrayAdapter<hero> {
+        public  listAdapter() {
+            super(MainActivity.this, R.layout.itemview, heroList);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View itemView = convertView;
+            if (itemView == null) {
+                itemView = getLayoutInflater().inflate(R.layout.itemview, parent, false);
+            }
+
+            hero currentHero = heroList.get(position);
+
+            ImageView itemImage = (ImageView) itemView.findViewById(R.id.itemImage);
+            itemImage.setImageResource(currentHero.getIconId());
+
+            TextView itemName = (TextView) itemView.findViewById(R.id.itemName);
+            itemName.setText(currentHero.getName());
+
+            TextView itemFaction = (TextView) itemView.findViewById(R.id.itemFaction);
+            if (currentHero.isFaction())
+            {
+                itemFaction.setText("Alliance");
+            }
+            else
+            {
+                itemFaction.setText("Horde");
+            }
+
+            return  itemView;
+            //return  super.getView(position, convertView, parent);
+        }
     }
 }

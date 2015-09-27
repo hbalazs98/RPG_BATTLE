@@ -10,6 +10,12 @@ public class hero{
     private int mana;
     private int wpnDmg;
     private int def;
+    private int iconId;
+
+    public int getIconId() {
+        return iconId;
+    }
+
 
     public boolean isFaction() {
         return faction;
@@ -45,7 +51,7 @@ public class hero{
 
     private boolean faction;
 
-    public hero(String name, int hp, int mana, int wpnDmg, int def, boolean faction)
+    public hero(String name, int hp, int mana, int wpnDmg, int def, boolean faction, int iconId)
     {
         this.name = name;
         this.hp = hp;
@@ -53,5 +59,6 @@ public class hero{
         this.wpnDmg = wpnDmg;
         this.def = def;
         this.faction = faction;
+        this.iconId = iconId;
     }
 }
