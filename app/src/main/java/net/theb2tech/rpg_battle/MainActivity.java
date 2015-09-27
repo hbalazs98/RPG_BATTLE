@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    public void buttonOnClick(View v){
+    public void callNewHero(View v){
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
@@ -62,6 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView itemImage = (ImageView) itemView.findViewById(R.id.itemImage);
             itemImage.setImageResource(currentHero.getIconId());
+
+            TextView itemName = (TextView) itemView.findViewById(R.id.itemName);
+            itemName.setText(currentHero.getName());
+
+            TextView itemFaction = (TextView) itemView.findViewById(R.id.itemFaction);
+            if (currentHero.isFaction())
+            {
+                itemFaction.setText("Alliance");
+            }
+            else
+            {
+                itemFaction.setText("Horde");
+            }
 
             return  itemView;
             //return  super.getView(position, convertView, parent);

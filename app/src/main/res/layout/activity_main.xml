@@ -23,7 +23,7 @@
         android:id="@+id/btn_newhero"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:onClick="buttonOnClick" />
+        android:onClick="callNewHero" />
 
     <ListView
         android:layout_width="wrap_content"
