@@ -9,14 +9,15 @@ import android.view.View;
 import java.util.List;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
-
-
 }
