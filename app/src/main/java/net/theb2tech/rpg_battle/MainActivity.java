@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
-    public static int editHeroPos = 0;
-    static boolean voltmán = false;
+    public static int editHeroPos = 0; //TODO ezt valahogy másthogy kéne megoldani
+    static boolean voltmán = false; //TODO végleges változatból törölni!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         populateListView();
         editHero();
-        if (!voltmán) {
+        if (!voltmán) { //TODO végleges változatból törölni!
             createDefaultHero();
         }
         voltmán = true;
