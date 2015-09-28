@@ -7,50 +7,54 @@ import android.view.View;
 import java.util.List;
 
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static List<hero> heroList = new ArrayList<>();
+    public static List<hero> heroList = new ArrayList<>();  //fő hős lista
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
+        ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
         populateListView();
         //createDefaultHero();
     }
 
-    private void createDefaultHero()
+    //debug hős létrehozása
+    //nem up to date
+    /* private void createDefaultHero()
     {
         heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
-    }
+    }*/
 
+    //lista nézet feltöltása
     private void populateListView() {
         ArrayAdapter<hero> adapter = new listAdapter();
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
+        ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
         listView.setAdapter(adapter);
     }
 
+    //átváltás uj hős képernyőra
     public void callNewHero(View v){
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
 
+    //átváltás információk képernyőra
     public void callInfos(View v){
         Intent intent = new Intent(this, infos.class);
         startActivity(intent);
     }
 
+    //listaadapter
     private class listAdapter extends ArrayAdapter<hero> {
         public  listAdapter() {
             super(MainActivity.this, R.layout.itemview, heroList);
@@ -68,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
             ImageView itemImage = (ImageView) itemView.findViewById(R.id.itemImage);
             itemImage.setImageResource(currentHero.getIconId());
 
-            TextView itemName = (TextView) itemView.findViewById(R.id.itemName);
+            TextView itemName = (TextView) itemView.findViewById(R.id.textHeroName);
             itemName.setText(currentHero.getName());
 
-            TextView itemFaction = (TextView) itemView.findViewById(R.id.itemFaction);
+            TextView itemFaction = (TextView) itemView.findViewById(R.id.textHeroFaction);
             if (currentHero.isFaction())
             {
                 itemFaction.setText("Alliance");
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 itemFaction.setText("Horde");
             }
 
-            TextView itemClass = (TextView) itemView.findViewById(R.id.itemClass);
+            TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
             itemClass.setText(currentHero.getHero_class().toString());
 
             return  itemView;

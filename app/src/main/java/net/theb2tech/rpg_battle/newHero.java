@@ -19,14 +19,14 @@ public class newHero extends Activity {
 
     public void save(View v)
     {
-        boolean faction;
-        EditText nameText = (EditText) findViewById(R.id.hero_name);
-        EditText hpText = (EditText) findViewById(R.id.hero_hp);
-        EditText manaText = (EditText) findViewById(R.id.hero_sp);
-        EditText wpnDmgText = (EditText) findViewById(R.id.hero_weapondamage);
-        EditText defText = (EditText) findViewById(R.id.hero_defense);
-        Spinner factionDrop = (Spinner) findViewById(R.id.faction);
-        Spinner heroClassDrop = (Spinner) findViewById(R.id.heroClass);
+        boolean faction;                                                        //hős frakciója, true=alliance, false= horde
+        EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
+        EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
+        EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
+        EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
+        EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
+        Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
+        Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
         if (factionDrop.getSelectedItem().toString() == "Horde")
         {
             faction = false;
