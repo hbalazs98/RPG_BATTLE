@@ -30,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         populateListView();
         editHero();
         if (!voltmán) { //TODO végleges változatból törölni!
+
+        for (int i = 0; i < 5; i++)
+        {
             createDefaultHero();
+        }
         }
         voltmán = true;
     }
@@ -111,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //MainActivity.editHeroPos = position;
+                MainActivity.editHeroPos = position;
                 callEdit(view);
             }
         });
