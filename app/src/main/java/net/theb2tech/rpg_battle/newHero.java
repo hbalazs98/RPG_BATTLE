@@ -44,7 +44,6 @@ public class newHero extends Activity {
                 faction,
                 heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
-        // TODO kép kiválasztása
         MainActivity.heroList.add(tempHero);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

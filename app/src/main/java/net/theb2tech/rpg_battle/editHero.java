@@ -72,7 +72,6 @@ public class editHero extends AppCompatActivity {
                 faction,
                 heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
-        // TODO kép kiválasztása
         MainActivity.heroList.set(MainActivity.editHeroPos,tempHero);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
