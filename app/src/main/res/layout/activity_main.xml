@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/currentHeroes"
-        android:id="@+id/heroes_title"
+        android:id="@+id/textMainTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/newHero"
-        android:id="@+id/btn_newhero"
+        android:id="@+id/btnNewHero"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:onClick="callNewHero" />
@@ -32,16 +32,16 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/current_heroes"
-        android:layout_below="@+id/heroes_title"
+        android:id="@+id/listCurrentHeroes"
+        android:layout_below="@+id/textMainTitle"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/btn_newhero" />
+        android:layout_above="@+id/btnNewHero" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/intobattle"
-        android:id="@+id/btn_intobattle"
+        android:id="@+id/btnStartBattle"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
@@ -49,9 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/info"
-        android:id="@+id/btn_info"
-        android:layout_alignTop="@+id/btn_intobattle"
-        android:layout_toStartOf="@+id/btn_intobattle"
-        android:layout_toEndOf="@+id/btn_newhero"
+        android:id="@+id/btnInfo"
+        android:layout_alignTop="@+id/btnStartBattle"
+        android:layout_toStartOf="@+id/btnStartBattle"
+        android:layout_toEndOf="@+id/btnNewHero"
         android:onClick="callInfos" />
 </RelativeLayout>

@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/itemName"
+        android:id="@+id/textHeroName"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/itemImage"
         android:textSize="20dp"
@@ -26,8 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/itemClass"
-        android:layout_below="@+id/itemName"
+        android:id="@+id/textHeroClass"
+        android:layout_below="@+id/textHeroName"
         android:layout_toEndOf="@+id/itemImage"
         android:textSize="20dp"
         android:textColor="#050505" />
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/itemFaction"
+        android:id="@+id/textHeroFaction"
         android:textSize="20dp"
-        android:layout_below="@+id/itemClass"
+        android:layout_below="@+id/textHeroClass"
         android:layout_toEndOf="@+id/itemImage"
         android:textColor="#050505" />
 </RelativeLayout>

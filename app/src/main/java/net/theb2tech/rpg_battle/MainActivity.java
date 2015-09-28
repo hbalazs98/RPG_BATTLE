@@ -18,44 +18,54 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static List<hero> heroList = new ArrayList<>();
+    public static List<hero> heroList = new ArrayList<>();  //fő hős lista
+    public static int editHeroPos = 0;
+    static boolean voltmán = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
         populateListView();
-        //createDefaultHero();
+        editHero();
+        if (!voltmán) {
+            createDefaultHero();
+        }
+        voltmán = true;
     }
 
-    private void createDefaultHero()
-    {
-        heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
-    }
-
+    //lista nézet feltöltása
     private void populateListView() {
         ArrayAdapter<hero> adapter = new listAdapter();
-        ListView listView = (ListView) findViewById(R.id.current_heroes);
+        ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
         listView.setAdapter(adapter);
     }
 
+    //átváltás uj hős képernyőra
     public void callNewHero(View v){
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
 
+    //átváltás információk képernyőra
     public void callInfos(View v){
         Intent intent = new Intent(this, infos.class);
         startActivity(intent);
     }
 
+    //átváltás információk képernyőra
+    public void callEdit(View v){
+        Intent intent = new Intent(this, editHero.class);
+        startActivity(intent);
+    }
+
+    //listaadapter
     private class listAdapter extends ArrayAdapter<hero> {
+
         public  listAdapter() {
             super(MainActivity.this, R.layout.itemview, heroList);
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View itemView = convertView;
@@ -68,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
             ImageView itemImage = (ImageView) itemView.findViewById(R.id.itemImage);
             itemImage.setImageResource(currentHero.getIconId());
 
-            TextView itemName = (TextView) itemView.findViewById(R.id.itemName);
+            TextView itemName = (TextView) itemView.findViewById(R.id.textHeroName);
             itemName.setText(currentHero.getName());
 
-            TextView itemFaction = (TextView) itemView.findViewById(R.id.itemFaction);
+            TextView itemFaction = (TextView) itemView.findViewById(R.id.textHeroFaction);
             if (currentHero.isFaction())
             {
                 itemFaction.setText("Alliance");
@@ -81,11 +91,29 @@ public class MainActivity extends AppCompatActivity {
                 itemFaction.setText("Horde");
             }
 
-            TextView itemClass = (TextView) itemView.findViewById(R.id.itemClass);
+            TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
             itemClass.setText(currentHero.getHero_class().toString());
 
             return  itemView;
             //return  super.getView(position, convertView, parent);
         }
+
+    }
+
+    //debug hős létrehozása
+    private void createDefaultHero()
+    {
+        heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
+    }
+
+    private void editHero() {
+        ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //MainActivity.editHeroPos = position;
+                callEdit(view);
+            }
+        });
     }
 }
