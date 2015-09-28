@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createDefaultHero()
     {
-        heroList.add(new hero("Test",1,1,1,1,false,R.drawable.dahero));
+        heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
     }
 
     private void populateListView() {
@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void callNewHero(View v){
         Intent intent = new Intent(this, newHero.class);
+        startActivity(intent);
+    }
+
+    public void callInfos(View v){
+        Intent intent = new Intent(this, infos.class);
         startActivity(intent);
     }
 
@@ -75,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
             {
                 itemFaction.setText("Horde");
             }
+
+            TextView itemClass = (TextView) itemView.findViewById(R.id.itemClass);
+            itemClass.setText(currentHero.getHero_class().toString());
 
             return  itemView;
             //return  super.getView(position, convertView, parent);

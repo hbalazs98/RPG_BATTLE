@@ -32,6 +32,7 @@ public class newHero extends Activity {
         EditText wpnDmgText = (EditText) findViewById(R.id.hero_weapondamage);
         EditText defText = (EditText) findViewById(R.id.hero_defense);
         Spinner factionDrop = (Spinner) findViewById(R.id.faction);
+        Spinner heroClassDrop = (Spinner) findViewById(R.id.heroClass);
         if (factionDrop.getSelectedItem().toString() == "Horde")
         {
             faction = false;
@@ -47,6 +48,7 @@ public class newHero extends Activity {
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),
                 faction,
+                heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
         // TODO kép kiválasztása
         MainActivity.heroList.add(tempHero);
