@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         populateListView();
         editHero();
-        if (!voltmán) { //TODO végleges változatból törölni!
+        /*if (!voltmán) { //TODO végleges változatból törölni!
 
         for (int i = 0; i < 5; i++)
         {
             createDefaultHero();
         }
         }
-        voltmán = true;
+        voltmán = true;*/
     }
 
     //lista nézet feltöltása
