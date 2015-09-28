@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="net.theb2tech.rpg_battle.editHero"
+    android:background="@drawable/background">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/textHeroName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:hint="@string/heroName"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/textHeroHp"
+        android:layout_below="@+id/textHeroName"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textHeroName"
+        android:hint="@string/heroHp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/textHeroMana"
+        android:hint="@string/heroMana"
+        android:layout_below="@+id/textHeroHp"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textHeroHp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/textHeroWpnDmg"
+        android:hint="@string/heroDmg"
+        android:layout_below="@+id/textHeroMana"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textHeroMana" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/textHeroDef"
+        android:hint="@string/heroDef"
+        android:layout_below="@+id/textHeroWpnDmg"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textHeroWpnDmg" />
+
+    <Spinner
+        android:entries="@array/factions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dropFaction"
+        android:layout_below="@+id/textHeroDef"
+        android:spinnerMode="dropdown"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:entries="@array/heroClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dropHeroClass"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/dropFaction"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hős mentése"
+        android:id="@+id/btnSaveHero"
+        android:onClick="save"
+        android:layout_below="@+id/dropHeroClass"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

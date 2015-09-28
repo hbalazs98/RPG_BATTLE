@@ -22,15 +22,16 @@
         </activity>
         <activity
             android:name=".infos"
-            android:label="@string/goToInfos">
+            android:label="@string/goToInfos" >
         </activity>
         <activity
             android:name=".heroClasses"
-            android:label="@string/hero_classes">
+            android:label="@string/hero_classes" >
         </activity>
-
-
-
+        <activity
+            android:name=".editHero"
+            android:label="@string/title_activity_edit_hero" >
+        </activity>
     </application>
 
 </manifest>

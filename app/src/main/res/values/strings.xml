@@ -34,4 +34,5 @@
     <string name="goToInfos">Infók</string>
     <string name="hero_classes">Hero classok</string>
     <string name="makeclasses">----Itt majd a Classok lesznek</string>
+    <string name="title_activity_edit_hero">Hós szerkesztése</string>
 </resources>
