@@ -73,8 +73,8 @@
         android:id="@+id/faction"
         android:layout_below="@+id/hero_defense"
         android:spinnerMode="dropdown"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Spinner
         android:entries="@array/heroClass"
@@ -83,7 +83,8 @@
         android:id="@+id/heroClass"
         android:spinnerMode="dropdown"
         android:layout_below="@+id/faction"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -91,19 +92,8 @@
         android:text="Hős mentése"
         android:id="@+id/saveHero"
         android:onClick="save"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/heroClass"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kép kiválasztása"
-        android:id="@+id/chooseImage"
-        android:onClick="callChooseImage"
-        android:layout_above="@+id/saveHero"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/saveHero" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

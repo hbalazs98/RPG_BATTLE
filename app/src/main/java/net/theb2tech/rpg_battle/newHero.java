@@ -17,12 +17,6 @@ public class newHero extends Activity {
         setContentView(R.layout.newhero);
     }
 
-    public void callChooseImage()
-    {
-        Intent intent = new Intent(this, chooseImage.class);
-        startActivity(intent);
-    }
-
     public void save(View v)
     {
         boolean faction;
