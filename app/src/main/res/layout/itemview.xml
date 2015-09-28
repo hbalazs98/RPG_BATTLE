@@ -22,6 +22,7 @@
         android:layout_toEndOf="@+id/itemImage"
         android:textSize="20dp"
         android:textColor="#050505" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,16 +30,16 @@
         android:id="@+id/textHeroClass"
         android:layout_below="@+id/textHeroName"
         android:layout_toEndOf="@+id/itemImage"
-        android:textSize="20dp"
-        android:textColor="#050505" />
+        android:textColor="#050505"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textHeroFaction"
-        android:textSize="20dp"
         android:layout_below="@+id/textHeroClass"
         android:layout_toEndOf="@+id/itemImage"
-        android:textColor="#050505" />
+        android:textColor="#050505"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 </RelativeLayout>
