@@ -43,4 +43,14 @@
         android:id="@+id/btn_intobattle"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info"
+        android:id="@+id/btn_info"
+        android:layout_alignTop="@+id/btn_intobattle"
+        android:layout_toStartOf="@+id/btn_intobattle"
+        android:layout_toEndOf="@+id/btn_newhero"
+        android:onClick="callInfos" />
 </RelativeLayout>

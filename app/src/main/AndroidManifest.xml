@@ -24,6 +24,17 @@
             android:name=".chooseImage"
             android:label="@string/title_activity_choose_image" >
         </activity>
+        <activity
+            android:name=".infos"
+            android:label="@string/goToInfos">
+        </activity>
+        <activity
+            android:name=".heroClasses"
+            android:label="@string/hero_classes">
+        </activity>
+
+
+
     </application>
 
 </manifest>
