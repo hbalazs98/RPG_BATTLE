@@ -20,16 +20,19 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
     public static int editHeroPos = 0;
+    static boolean voltmán = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
         populateListView();
         editHero();
-        //createDefaultHero();
+        if (!voltmán) {
+            createDefaultHero();
+        }
+        voltmán = true;
     }
 
     //lista nézet feltöltása
@@ -98,18 +101,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //debug hős létrehozása
-    //nem up to date
-    /* private void createDefaultHero()
+    private void createDefaultHero()
     {
         heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
-    }*/
+    }
+
     private void editHero() {
         ListView listView = (ListView) findViewById(R.id.listCurrentHeroes);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                hero clicked = heroList.get(position);
-                Toast.makeText(MainActivity.this, clicked.getName(), Toast.LENGTH_LONG).show();
+                //MainActivity.editHeroPos = position;
+                callEdit(view);
             }
         });
     }

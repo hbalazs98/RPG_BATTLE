@@ -15,10 +15,34 @@ public class editHero extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_hero);
+        fill();
     }
 
-    public void fill(hero edit) {
+    public void fill() {
+        EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
+        nameText.setText(MainActivity.heroList.get(MainActivity.editHeroPos).getName());
 
+        EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
+        hpText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getHp()));
+
+        EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
+        manaText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getMana()));
+
+        EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
+        wpnDmgText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getWpnDmg()));
+
+        EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
+        defText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getDef()));
+
+        Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
+        if (MainActivity.heroList.get(MainActivity.editHeroPos).isFaction()) {
+            factionDrop.setSelection(0);
+        }
+        else
+        {
+            factionDrop.setSelection(1);
+        }
+        Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya*/
     }
 
     public void save(View v)
@@ -49,7 +73,7 @@ public class editHero extends AppCompatActivity {
                 heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
         // TODO kép kiválasztása
-        MainActivity.heroList.add(tempHero);
+        MainActivity.heroList.set(MainActivity.editHeroPos,tempHero);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
