@@ -3,7 +3,7 @@ package net.theb2tech.rpg_battle;
 /**
  * Created by Balázs on 27/09/2015.
  */
-public class hero{
+public class hero {
 
     private String name;
     private int hp;
@@ -51,10 +51,13 @@ public class hero{
         return def;
     }
 
-    public String getHero_class() { return hero_class; };
+    public String getHero_class() {
+        return hero_class;
+    }
 
-    public hero(String name, int hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId)
-    {
+    ;
+
+    public hero(String name, int hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId) {
         this.name = name;
         this.hp = hp;
         this.mana = mana;

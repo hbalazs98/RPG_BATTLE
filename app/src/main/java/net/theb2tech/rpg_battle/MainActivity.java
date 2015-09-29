@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
 import java.util.List;
 
 import android.view.ViewGroup;
@@ -48,19 +49,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //átváltás uj hős képernyőra
-    public void callNewHero(View v){
+    public void callNewHero(View v) {
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
 
     //átváltás információk képernyőra
-    public void callInfos(View v){
+    public void callInfos(View v) {
         Intent intent = new Intent(this, infos.class);
         startActivity(intent);
     }
 
     //átváltás információk képernyőra
-    public void callEdit(View v){
+    public void callEdit(View v) {
         Intent intent = new Intent(this, editHero.class);
         startActivity(intent);
     }
@@ -68,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
     //listaadapter
     private class listAdapter extends ArrayAdapter<hero> {
 
-        public  listAdapter() {
+        public listAdapter() {
             super(MainActivity.this, R.layout.itemview, heroList);
         }
+
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View itemView = convertView;
@@ -92,15 +94,14 @@ public class MainActivity extends AppCompatActivity {
             TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
             itemClass.setText(currentHero.getHero_class());
 
-            return  itemView;
+            return itemView;
             //return  super.getView(position, convertView, parent);
         }
 
     }
 
     //debug hős létrehozása
-    private void createDefaultHero()
-    {
+    private void createDefaultHero() {
         heroList.add(new hero("Test", 1, 1, 1, 1, "Horde", "Warrior", R.drawable.dahero));
     }
 
