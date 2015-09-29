@@ -80,7 +80,6 @@ public class newHero extends Activity {
     public void save(View v)
     {
         if (check()) {
-            boolean faction;                                                        //hős frakciója, true=alliance, false= horde
             EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
             EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
             EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
@@ -88,15 +87,6 @@ public class newHero extends Activity {
             EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
             Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
             Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
-            if (factionDrop.getSelectedItem().toString() == "Horde") {
-                faction = false;
-            } else {
-                faction = true;
-            }
-
-            if (Integer.parseInt(hpText.getText().toString()) > 500) {
-                Toast.makeText(this, "Az életerő nem lehet 500-nál nagyobb!", Toast.LENGTH_LONG).show();
-            }
 
             try {
                 hero tempHero = new hero(nameText.getText().toString(),
@@ -104,7 +94,7 @@ public class newHero extends Activity {
                         Integer.parseInt(manaText.getText().toString()),
                         Integer.parseInt(wpnDmgText.getText().toString()),
                         Integer.parseInt(defText.getText().toString()),
-                        faction,
+                        factionDrop.getSelectedItem().toString(),
                         heroClassDrop.getSelectedItem().toString(),
                         R.drawable.dahero);
                 MainActivity.heroList.add(tempHero);

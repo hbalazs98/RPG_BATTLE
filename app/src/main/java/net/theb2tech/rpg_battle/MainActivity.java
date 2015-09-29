@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
     public static int editHeroPos = 0; //TODO ezt valahogy másthogy kéne megoldani
-    static boolean voltmán = false; //TODO végleges változatból törölni!
+    //static boolean voltmán = false; //TODO végleges változatból törölni!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         populateListView();
         editHero();
+        createDefaultHero();
         /*if (!voltmán) { //TODO végleges változatból törölni!
 
         for (int i = 0; i < 5; i++)
@@ -86,17 +87,10 @@ public class MainActivity extends AppCompatActivity {
             itemName.setText(currentHero.getName());
 
             TextView itemFaction = (TextView) itemView.findViewById(R.id.textHeroFaction);
-            if (currentHero.isFaction())
-            {
-                itemFaction.setText("Alliance");
-            }
-            else
-            {
-                itemFaction.setText("Horde");
-            }
+            itemFaction.setText(currentHero.getFaction().toString());
 
             TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
-            itemClass.setText(currentHero.getHero_class().toString());
+            itemClass.setText(currentHero.getHero_class());
 
             return  itemView;
             //return  super.getView(position, convertView, parent);
@@ -107,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     //debug hős létrehozása
     private void createDefaultHero()
     {
-        heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
+        heroList.add(new hero("Test", 1, 1, 1, 1, "Horde", "Warrior", R.drawable.dahero));
     }
 
     private void editHero() {
