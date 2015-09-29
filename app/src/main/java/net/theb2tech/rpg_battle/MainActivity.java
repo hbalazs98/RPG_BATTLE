@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
     public static int editHeroPos = 0; //TODO ezt valahogy másthogy kéne megoldani
-    static boolean voltmán = false; //TODO végleges változatból törölni!
+    //static boolean voltmán = false; //TODO végleges változatból törölni!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         populateListView();
         editHero();
+        createDefaultHero();
         /*if (!voltmán) { //TODO végleges változatból törölni!
 
         for (int i = 0; i < 5; i++)
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
-            itemClass.setText(currentHero.getHero_class().toString());
+            itemClass.setText(currentHero.getHero_class());
 
             return  itemView;
             //return  super.getView(position, convertView, parent);

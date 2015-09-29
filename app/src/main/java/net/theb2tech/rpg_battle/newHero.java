@@ -94,10 +94,6 @@ public class newHero extends Activity {
                 faction = true;
             }
 
-            if (Integer.parseInt(hpText.getText().toString()) > 500) {
-                Toast.makeText(this, "Az életerő nem lehet 500-nál nagyobb!", Toast.LENGTH_LONG).show();
-            }
-
             try {
                 hero tempHero = new hero(nameText.getText().toString(),
                         Integer.parseInt(hpText.getText().toString()),
