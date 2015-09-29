@@ -13,13 +13,14 @@ public class hero{
     private int iconId;
     private String hero_class;
 
-    public int getIconId() {
-        return iconId;
+    public String getFaction() {
+        return faction;
     }
 
+    private String faction;
 
-    public boolean isFaction() {
-        return faction;
+    public int getIconId() {
+        return iconId;
     }
 
     public String getName() {
@@ -52,9 +53,7 @@ public class hero{
 
     public String getHero_class() { return hero_class; };
 
-    private boolean faction;
-
-    public hero(String name, int hp, int mana, int wpnDmg, int def, boolean faction, String hero_class, int iconId)
+    public hero(String name, int hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId)
     {
         this.name = name;
         this.hp = hp;

@@ -35,7 +35,7 @@ public class editHero extends AppCompatActivity {
         defText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getDef()));
 
         Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
-        if (MainActivity.heroList.get(MainActivity.editHeroPos).isFaction()) {
+        if (MainActivity.heroList.get(MainActivity.editHeroPos).getFaction() == "Alliance") {
             factionDrop.setSelection(0);
         }
         else
@@ -47,7 +47,6 @@ public class editHero extends AppCompatActivity {
 
     public void save(View v)
     {
-        boolean faction;                                                        //hős frakciója, true=alliance, false= horde
         EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
         EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
         EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
@@ -55,21 +54,13 @@ public class editHero extends AppCompatActivity {
         EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
         Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
         Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
-        if (factionDrop.getSelectedItem().toString() == "Horde")
-        {
-            faction = false;
-        }
-        else
-        {
-            faction = true;
-        }
 
         hero tempHero = new hero(nameText.getText().toString(),
                 Integer.parseInt(hpText.getText().toString()),
                 Integer.parseInt(manaText.getText().toString()),
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),
-                faction,
+                factionDrop.getSelectedItem().toString(),
                 heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
         MainActivity.heroList.set(MainActivity.editHeroPos,tempHero);

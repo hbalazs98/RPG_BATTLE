@@ -87,14 +87,7 @@ public class MainActivity extends AppCompatActivity {
             itemName.setText(currentHero.getName());
 
             TextView itemFaction = (TextView) itemView.findViewById(R.id.textHeroFaction);
-            if (currentHero.isFaction())
-            {
-                itemFaction.setText("Alliance");
-            }
-            else
-            {
-                itemFaction.setText("Horde");
-            }
+            itemFaction.setText(currentHero.getFaction().toString());
 
             TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
             itemClass.setText(currentHero.getHero_class());
@@ -108,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     //debug hős létrehozása
     private void createDefaultHero()
     {
-        heroList.add(new hero("Test", 1, 1, 1, 1, false, "Warrior", R.drawable.dahero));
+        heroList.add(new hero("Test", 1, 1, 1, 1, "Horde", "Warrior", R.drawable.dahero));
     }
 
     private void editHero() {
