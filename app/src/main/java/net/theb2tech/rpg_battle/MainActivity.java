@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
     public static int editHeroPos = 0; //TODO ezt valahogy másthogy kéne megoldani
     //static boolean voltmán = false; //TODO végleges változatból törölni!
+    //laci itt volt
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
