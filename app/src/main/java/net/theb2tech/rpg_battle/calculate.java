@@ -6,10 +6,10 @@ import java.util.Random;
  * Created by Balázs on 2015. 09. 27..
  */
 public class calculate {
-    Random rand = new Random();
+    static Random rand = new Random();
 
     //attacker hős támadásának számítása
-    public double dmg(hero attacker)
+    public static double attack(hero attacker)
     {
         if (attacker.getMana() == 0) {
             return attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
@@ -33,7 +33,7 @@ public class calculate {
     }
 
     //defender hős védelmének számítása
-    public double defence(hero defender)
+    public static double defence(hero defender)
     {
         double herodef = (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
         if (defender.getMana() == 0) {

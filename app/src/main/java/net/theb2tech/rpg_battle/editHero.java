@@ -23,7 +23,7 @@ public class editHero extends AppCompatActivity {
         nameText.setText(MainActivity.heroList.get(MainActivity.editHeroPos).getName());
 
         EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
-        hpText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getHp()));
+        hpText.setText(Double.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getHp()));
 
         EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
         manaText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getMana()));

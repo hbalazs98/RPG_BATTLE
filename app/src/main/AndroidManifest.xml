@@ -32,6 +32,10 @@
             android:name=".editHero"
             android:label="@string/title_activity_edit_hero" >
         </activity>
+        <activity
+            android:name=".battleActivity"
+            android:label="@string/title_activity_battle" >
+        </activity>
     </application>
 
 </manifest>
