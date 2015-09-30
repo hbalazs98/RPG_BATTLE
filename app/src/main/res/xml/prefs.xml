@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:title="Osztály bónusz"
+        android:key="keyClassBonus"
+        android:summary="Extra funkció: különböző osztályoknak tényleges előny harcokban.">
+    </CheckBoxPreference>
+
+    <CheckBoxPreference
+        android:title="Frakciók"
+        android:key="keyFactions"
+        android:summary="Ha pipálva van akkor a hősök csak más frakciókat támadnak (amíg van más frakció).">
+    </CheckBoxPreference>
+
+    <CheckBoxPreference
+        android:title="Szövetséges győzelem"
+        android:key="keyAlliedVictory"
+        android:summary="Extra funkció: ha be van pipálva akkor frakciók nyernek, ha nincs akkor egyedi hősök.">
+    </CheckBoxPreference>
+</PreferenceScreen>
