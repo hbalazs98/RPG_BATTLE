@@ -33,4 +33,7 @@
     <string name="hero_classes">Hero classok</string>
     <string name="makeclasses">----Itt majd a Classok lesznek</string>
     <string name="title_activity_edit_hero">Hós szerkesztése</string>
+    <string name="title_activity_battle">battleActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

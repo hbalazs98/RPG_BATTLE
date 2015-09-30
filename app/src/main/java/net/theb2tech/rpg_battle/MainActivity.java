@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void callBattle(View v){
+        Intent intent = new Intent(this, battleActivity.class);
+        startActivity(intent);
+    }
+
     //listaadapter
     private class listAdapter extends ArrayAdapter<hero> {
 
