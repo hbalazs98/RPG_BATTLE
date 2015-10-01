@@ -9,12 +9,9 @@ public class calculate {
     static Random rand = new Random();
 
     //attacker hős támadásának számítása
-<<<<<<< HEAD
     public double dmg(hero attacker) {
-=======
     public static double attack(hero attacker)
     {
->>>>>>> pimpi
         if (attacker.getMana() == 0) {
             return attacker.getWpnDmg() * (Math.floor(Math.random() * (13 - 5 + 1)) + 5) / 10;
         } else {
@@ -33,14 +30,11 @@ public class calculate {
     }
 
     //defender hős védelmének számítása
-<<<<<<< HEAD
     public double defence(hero defender) {
         double herodef = (defender.getDef()) * (Math.floor(Math.random() * (13 - 5 + 1)) + 5) / 10;
-=======
     public static double defence(hero defender)
     {
         double herodef = (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;
->>>>>>> pimpi
         if (defender.getMana() == 0) {
             //return defender.getWpnDmg() * (rand.nextInt(45) + 70) / 10;
         } else {
