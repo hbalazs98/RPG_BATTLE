@@ -3,7 +3,10 @@ package net.theb2tech.rpg_battle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
 import java.util.List;
 
 import android.view.ViewGroup;
@@ -40,6 +43,28 @@ public class MainActivity extends AppCompatActivity {
         voltmán = true;*/
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     //lista nézet feltöltása
     private void populateListView() {
         ArrayAdapter<hero> adapter = new listAdapter();
@@ -48,19 +73,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //átváltás uj hős képernyőra
-    public void callNewHero(View v){
+    public void callNewHero(View v) {
         Intent intent = new Intent(this, newHero.class);
         startActivity(intent);
     }
 
     //átváltás információk képernyőra
-    public void callInfos(View v){
+    public void callInfos(View v) {
         Intent intent = new Intent(this, infos.class);
         startActivity(intent);
     }
 
     //átváltás információk képernyőra
-    public void callEdit(View v){
+    public void callEdit(View v) {
         Intent intent = new Intent(this, editHero.class);
         startActivity(intent);
     }
@@ -73,9 +98,10 @@ public class MainActivity extends AppCompatActivity {
     //listaadapter
     private class listAdapter extends ArrayAdapter<hero> {
 
-        public  listAdapter() {
+        public listAdapter() {
             super(MainActivity.this, R.layout.itemview, heroList);
         }
+
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View itemView = convertView;
@@ -97,15 +123,14 @@ public class MainActivity extends AppCompatActivity {
             TextView itemClass = (TextView) itemView.findViewById(R.id.textHeroClass);
             itemClass.setText(currentHero.getHero_class());
 
-            return  itemView;
+            return itemView;
             //return  super.getView(position, convertView, parent);
         }
 
     }
 
     //debug hős létrehozása
-    private void createDefaultHero()
-    {
+    private void createDefaultHero() {
         heroList.add(new hero("Test", 1, 1, 1, 1, "Horde", "Warrior", R.drawable.dahero));
     }
 

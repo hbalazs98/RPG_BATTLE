@@ -15,7 +15,7 @@ public class infos extends Activity {
         setContentView(R.layout.infos);
     }
 
-    public void ClickOnClasses(View v){
+    public void ClickOnClasses(View v) {
         Intent intent = new Intent(this, heroClasses.class);
         startActivity(intent);
     }

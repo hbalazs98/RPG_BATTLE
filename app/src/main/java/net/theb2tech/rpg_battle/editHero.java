@@ -37,16 +37,13 @@ public class editHero extends AppCompatActivity {
         Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
         if (MainActivity.heroList.get(MainActivity.editHeroPos).getFaction() == "Alliance") {
             factionDrop.setSelection(0);
-        }
-        else
-        {
+        } else {
             factionDrop.setSelection(1);
         }
         Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya*/
     }
 
-    public void save(View v)
-    {
+    public void save(View v) {
         EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
         EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
         EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
@@ -63,7 +60,7 @@ public class editHero extends AppCompatActivity {
                 factionDrop.getSelectedItem().toString(),
                 heroClassDrop.getSelectedItem().toString(),
                 R.drawable.dahero);
-        MainActivity.heroList.set(MainActivity.editHeroPos,tempHero);
+        MainActivity.heroList.set(MainActivity.editHeroPos, tempHero);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
