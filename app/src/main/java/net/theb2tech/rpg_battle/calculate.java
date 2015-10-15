@@ -9,7 +9,6 @@ public class calculate {
     static Random rand = new Random();
 
     //attacker hős támadásának számítása
-    public double dmg(hero attacker) {
     public static double attack(hero attacker)
     {
         if (attacker.getMana() == 0) {
@@ -30,8 +29,6 @@ public class calculate {
     }
 
     //defender hős védelmének számítása
-    public double defence(hero defender) {
-        double herodef = (defender.getDef()) * (Math.floor(Math.random() * (13 - 5 + 1)) + 5) / 10;
     public static double defence(hero defender)
     {
         double herodef = (defender.getDef())*(Math.floor(Math.random() * (13 - 5 + 1)) + 5)/10;

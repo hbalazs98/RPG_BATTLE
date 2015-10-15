@@ -15,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<hero> heroList = new ArrayList<>();  //fő hős lista
     public static int editHeroPos = 0; //TODO ezt valahogy másthogy kéne megoldani
-    //static boolean voltmán = false; //TODO végleges változatból törölni!
+    static boolean voltmán = false; //TODO végleges változatból törölni!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         populateListView();
         editHero();
-        createDefaultHero();
-        /*if (!voltmán) { //TODO végleges változatból törölni!
+        if (!voltmán) { //TODO végleges változatból törölni!
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 1; i++)
         {
             createDefaultHero();
         }
         }
-        voltmán = true;*/
+        voltmán = true;
     }
 
     @Override
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             ImageView itemImage = (ImageView) itemView.findViewById(R.id.itemImage);
             itemImage.setImageResource(currentHero.getIconId());
 
-            TextView itemName = (TextView) itemView.findViewById(R.id.textHeroName);
+            TextView itemName = (TextView) itemView.findViewById(R.id.text_name);
             itemName.setText(currentHero.getName());
 
             TextView itemFaction = (TextView) itemView.findViewById(R.id.textHeroFaction);
