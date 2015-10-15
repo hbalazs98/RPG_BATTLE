@@ -57,7 +57,7 @@ public class hero {
 
     ;
 
-    public hero(String name, int hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId) {
+    public hero(String name, double hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId) {
         this.name = name;
         this.hp = hp;
         this.mana = mana;

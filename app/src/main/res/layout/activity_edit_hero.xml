@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/textHeroName"
+        android:id="@+id/text_name"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:hint="@string/heroName"
@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/textHeroHp"
-        android:layout_below="@+id/textHeroName"
+        android:id="@+id/tex_hp"
+        android:layout_below="@+id/text_name"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textHeroName"
+        android:layout_alignEnd="@+id/text_name"
         android:hint="@string/heroHp" />
 
     <EditText
@@ -34,40 +34,40 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/textHeroMana"
+        android:id="@+id/text_mana"
         android:hint="@string/heroMana"
-        android:layout_below="@+id/textHeroHp"
+        android:layout_below="@+id/tex_hp"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textHeroHp" />
+        android:layout_alignEnd="@+id/tex_hp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/textHeroWpnDmg"
+        android:id="@+id/text_dmg"
         android:hint="@string/heroDmg"
-        android:layout_below="@+id/textHeroMana"
+        android:layout_below="@+id/text_mana"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textHeroMana" />
+        android:layout_alignEnd="@+id/text_mana" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/textHeroDef"
+        android:id="@+id/text_def"
         android:hint="@string/heroDef"
-        android:layout_below="@+id/textHeroWpnDmg"
+        android:layout_below="@+id/text_dmg"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textHeroWpnDmg" />
+        android:layout_alignEnd="@+id/text_dmg" />
 
     <Spinner
         android:entries="@array/factions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dropFaction"
-        android:layout_below="@+id/textHeroDef"
+        android:layout_below="@+id/text_def"
         android:spinnerMode="dropdown"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />

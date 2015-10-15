@@ -3,8 +3,6 @@ package net.theb2tech.rpg_battle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,19 +17,19 @@ public class editHero extends AppCompatActivity {
     }
 
     public void fill() {
-        EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
+        EditText nameText = (EditText) findViewById(R.id.text_name);         //hős neve
         nameText.setText(MainActivity.heroList.get(MainActivity.editHeroPos).getName());
 
-        EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
+        EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
         hpText.setText(Double.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getHp()));
 
-        EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
+        EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
         manaText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getMana()));
 
-        EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
+        EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
         wpnDmgText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getWpnDmg()));
 
-        EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
+        EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
         defText.setText(Integer.toString(MainActivity.heroList.get(MainActivity.editHeroPos).getDef()));
 
         Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
@@ -44,16 +42,16 @@ public class editHero extends AppCompatActivity {
     }
 
     public void save(View v) {
-        EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
-        EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
-        EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
-        EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
-        EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
+        EditText nameText = (EditText) findViewById(R.id.text_name);         //hős neve
+        EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
+        EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
+        EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
+        EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
         Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
         Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
 
         hero tempHero = new hero(nameText.getText().toString(),
-                Integer.parseInt(hpText.getText().toString()),
+                Double.parseDouble(hpText.getText().toString()),
                 Integer.parseInt(manaText.getText().toString()),
                 Integer.parseInt(wpnDmgText.getText().toString()),
                 Integer.parseInt(defText.getText().toString()),

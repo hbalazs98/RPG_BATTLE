@@ -3,13 +3,12 @@ package net.theb2tech.rpg_battle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.Console;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by Balázs on 2015. 09. 27..
@@ -22,17 +21,17 @@ public class newHero extends Activity {
     }
 
     boolean check() {
-        EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
-        EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
-        EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
-        EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
+        EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
+        EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
+        EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
+        EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
 
         boolean valid = true;
 
-        if (Integer.parseInt(hpText.getText().toString()) < 10) {
+        /*if (Double.parseDouble(hpText.getText().toString()) < 10) {
             Toast.makeText(this, "Az életerő nem lehet 10-nél kissebb!", Toast.LENGTH_LONG).show();
             valid = false;
-        } else if (Integer.parseInt(hpText.getText().toString()) > 500) {
+        } else if (Double.parseDouble(hpText.getText().toString()) > 500) {
             Toast.makeText(this, "Az életerő nem lehet 500-nál nagyobb!", Toast.LENGTH_LONG).show();
             valid = false;
         }
@@ -59,24 +58,25 @@ public class newHero extends Activity {
         } else if (Integer.parseInt(defText.getText().toString()) > 10) {
             Toast.makeText(this, "Az védelmi képesség nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
             valid = false;
-        }
+        }*/
 
         return valid;
     }
 
     public void save(View v) {
         if (check()) {
-            EditText nameText = (EditText) findViewById(R.id.textHeroName);         //hős neve
-            EditText hpText = (EditText) findViewById(R.id.textHeroHp);             //hős életereje
-            EditText manaText = (EditText) findViewById(R.id.textHeroMana);         //hős varázsereje
-            EditText wpnDmgText = (EditText) findViewById(R.id.textHeroWpnDmg);     //hős fegyversebzése
-            EditText defText = (EditText) findViewById(R.id.textHeroDef);           //hős védelme
-            Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
-            Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
-
             try {
+                EditText nameText = (EditText) findViewById(R.id.text_name);         //hős neve
+                EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
+                EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
+                EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
+                EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
+                Spinner factionDrop = (Spinner) findViewById(R.id.dropFaction);
+                Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
+
+
                 hero tempHero = new hero(nameText.getText().toString(),
-                        Integer.parseInt(hpText.getText().toString()),
+                        Double.parseDouble(hpText.getText().toString()),
                         Integer.parseInt(manaText.getText().toString()),
                         Integer.parseInt(wpnDmgText.getText().toString()),
                         Integer.parseInt(defText.getText().toString()),
@@ -84,11 +84,12 @@ public class newHero extends Activity {
                         heroClassDrop.getSelectedItem().toString(),
                         R.drawable.dahero);
                 MainActivity.heroList.add(tempHero);
+
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             } catch (Exception e) {
                 Toast.makeText(this, "Az egyik tulajdonság hinányzik!", Toast.LENGTH_LONG).show();
             }
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
         }
     }
 }
