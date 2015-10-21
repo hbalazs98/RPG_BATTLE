@@ -28,7 +28,7 @@ public class newHero extends Activity {
 
         boolean valid = true;
 
-        /*if (Double.parseDouble(hpText.getText().toString()) < 10) {
+        if (Double.parseDouble(hpText.getText().toString()) < 10) {
             Toast.makeText(this, "Az életerő nem lehet 10-nél kissebb!", Toast.LENGTH_LONG).show();
             valid = false;
         } else if (Double.parseDouble(hpText.getText().toString()) > 500) {
@@ -58,7 +58,7 @@ public class newHero extends Activity {
         } else if (Integer.parseInt(defText.getText().toString()) > 10) {
             Toast.makeText(this, "Az védelmi képesség nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
             valid = false;
-        }*/
+        }
 
         return valid;
     }

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,11 +33,9 @@ public class MainActivity extends AppCompatActivity {
         populateListView();
         editHero();
         if (!voltmán) { //TODO végleges változatból törölni!
-
-        for (int i = 0; i < 1; i++)
-        {
-            createDefaultHero();
-        }
+            for (int i = 0; i < 2; i++) {
+                createDefaultHero(Integer.toString(i));
+            }
         }
         voltmán = true;
     }
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void callBattle(View v){
+    public void callBattle(View v) {
         Intent intent = new Intent(this, battleActivity.class);
         startActivity(intent);
     }
@@ -124,12 +123,11 @@ public class MainActivity extends AppCompatActivity {
             return itemView;
             //return  super.getView(position, convertView, parent);
         }
-
     }
 
     //debug hős létrehozása
-    private void createDefaultHero() {
-        heroList.add(new hero("Test", 1, 1, 1, 1, "Horde", "Warrior", R.drawable.dahero));
+    private void createDefaultHero(String name) {
+        heroList.add(new hero(name, 10, 10, 10, 10, "Horde", "Warrior", R.drawable.dahero));
     }
 
     private void editHero() {
