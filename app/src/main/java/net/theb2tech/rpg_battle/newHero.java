@@ -39,7 +39,7 @@ public class newHero extends Activity {
         if (Integer.parseInt(manaText.getText().toString()) < 0) {
             Toast.makeText(this, "Az varázserő nem lehet 0-nál kissebb!", Toast.LENGTH_LONG).show();
             valid = false;
-        } else if (Integer.parseInt(hpText.getText().toString()) > 20) {
+        } else if (Integer.parseInt(manaText.getText().toString()) > 20) {
             Toast.makeText(this, "Az varázserő nem lehet 20-nál nagyobb!", Toast.LENGTH_LONG).show();
             valid = false;
         }
