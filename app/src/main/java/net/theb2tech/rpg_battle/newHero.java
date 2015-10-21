@@ -21,46 +21,51 @@ public class newHero extends Activity {
     }
 
     boolean check() {
-        EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
-        EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
-        EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
-        EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
+        try {
+            EditText hpText = (EditText) findViewById(R.id.tex_hp);             //hős életereje
+            EditText manaText = (EditText) findViewById(R.id.text_mana);         //hős varázsereje
+            EditText wpnDmgText = (EditText) findViewById(R.id.text_dmg);     //hős fegyversebzése
+            EditText defText = (EditText) findViewById(R.id.text_def);           //hős védelme
 
-        boolean valid = true;
+            boolean valid = true;
 
-        if (Double.parseDouble(hpText.getText().toString()) < 10) {
-            Toast.makeText(this, "Az életerő nem lehet 10-nél kissebb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (Double.parseDouble(hpText.getText().toString()) > 500) {
-            Toast.makeText(this, "Az életerő nem lehet 500-nál nagyobb!", Toast.LENGTH_LONG).show();
-            valid = false;
+            if (Double.parseDouble(hpText.getText().toString()) < 10) {
+                Toast.makeText(this, "Az életerő nem lehet 10-nél kissebb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            } else if (Double.parseDouble(hpText.getText().toString()) > 500) {
+                Toast.makeText(this, "Az életerő nem lehet 500-nál nagyobb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            }
+
+            if (Integer.parseInt(manaText.getText().toString()) < 0) {
+                Toast.makeText(this, "Az varázserő nem lehet 0-nál kissebb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            } else if (Integer.parseInt(hpText.getText().toString()) > 20) {
+                Toast.makeText(this, "Az varázserő nem lehet 20-nál nagyobb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            }
+
+            if (Integer.parseInt(wpnDmgText.getText().toString()) < 1) {
+                Toast.makeText(this, "Az fegyver sebzése nem lehet 1-nél kissebb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            } else if (Integer.parseInt(wpnDmgText.getText().toString()) > 10) {
+                Toast.makeText(this, "Az fegyver sebzése nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            }
+
+            if (Integer.parseInt(defText.getText().toString()) < 1) {
+                Toast.makeText(this, "Az védelmi képesség nem lehet 1-nél kissebb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            } else if (Integer.parseInt(defText.getText().toString()) > 10) {
+                Toast.makeText(this, "Az védelmi képesség nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
+                valid = false;
+            }
+
+            return valid;
+        } catch (Exception e) {
+            Toast.makeText(this, "Az egyik tulajdonság hinányzik!", Toast.LENGTH_LONG).show();
+            return false;
         }
-
-        if (Integer.parseInt(manaText.getText().toString()) < 0) {
-            Toast.makeText(this, "Az varázserő nem lehet 0-nál kissebb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (Integer.parseInt(hpText.getText().toString()) > 20) {
-            Toast.makeText(this, "Az varázserő nem lehet 20-nál nagyobb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        }
-
-        if (Integer.parseInt(wpnDmgText.getText().toString()) < 1) {
-            Toast.makeText(this, "Az fegyver sebzése nem lehet 1-nél kissebb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (Integer.parseInt(wpnDmgText.getText().toString()) > 10) {
-            Toast.makeText(this, "Az fegyver sebzése nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        }
-
-        if (Integer.parseInt(defText.getText().toString()) < 1) {
-            Toast.makeText(this, "Az védelmi képesség nem lehet 1-nél kissebb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (Integer.parseInt(defText.getText().toString()) > 10) {
-            Toast.makeText(this, "Az védelmi képesség nem lehet 10-nál nagyobb!", Toast.LENGTH_LONG).show();
-            valid = false;
-        }
-
-        return valid;
     }
 
     public void save(View v) {
