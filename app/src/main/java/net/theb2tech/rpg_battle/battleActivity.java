@@ -36,7 +36,7 @@ public class battleActivity extends AppCompatActivity {
                 //battleActivity.battleTick();
                 battleTick();
             }
-        }, 10000, 10000);
+        }, 3000, 3000);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class battleActivity extends AppCompatActivity {
                     Toast.makeText(battleActivity.this, heroListBattle.get(i).getName() + " támadja " + heroListBattle.get(defender).getName() + "-et.", Toast.LENGTH_LONG).show();
 
                     if (calculate.defence(heroListBattle.get(defender)) < calculate.attack(heroListBattle.get(i))) {
-                        heroListBattle.get(defender).setHp(Math.floor(heroListBattle.get(defender).getHp() - (calculate.attack(heroListBattle.get(i)))));
+                        heroListBattle.get(defender).setHp((int)Math.floor(heroListBattle.get(defender).getHp() - (calculate.attack(heroListBattle.get(i)))));
 
                         Toast.makeText(battleActivity.this, heroListBattle.get(i).getName() + " " + calculate.attack(heroListBattle.get(i)) + " -et sebzett " +
                                 heroListBattle.get(defender).getName() + "-nek. (" + calculate.defence(heroListBattle.get(defender)) + " védelem)", Toast.LENGTH_LONG).show();

@@ -104,7 +104,7 @@ public class editHero extends AppCompatActivity {
                 Spinner heroClassDrop = (Spinner) findViewById(R.id.dropHeroClass);     //hős osztálya
 
                 hero tempHero = new hero(nameText.getText().toString(),
-                        Double.parseDouble(hpText.getText().toString()),
+                        Integer.parseInt(hpText.getText().toString()),
                         Integer.parseInt(manaText.getText().toString()),
                         Integer.parseInt(wpnDmgText.getText().toString()),
                         Integer.parseInt(defText.getText().toString()),

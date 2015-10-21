@@ -6,7 +6,7 @@ package net.theb2tech.rpg_battle;
 public class hero {
 
     private String name;
-    private double hp;
+    private int hp;
     private int mana;
     private int wpnDmg;
     private int def;
@@ -31,7 +31,7 @@ public class hero {
         return hp;
     }
 
-    public void setHp(double hp) {
+    public void setHp(int hp) {
         this.hp = hp;
     }
 
@@ -57,7 +57,7 @@ public class hero {
 
     ;
 
-    public hero(String name, double hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId) {
+    public hero(String name, int hp, int mana, int wpnDmg, int def, String faction, String hero_class, int iconId) {
         this.name = name;
         this.hp = hp;
         this.mana = mana;
