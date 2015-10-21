@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/dahero"
+        android:maxHeight="80dp"
+        android:maxWidth="80dp"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/text_name"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/itemImage"
+        android:textSize="20dp"
+        android:textColor="#050505" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textHeroClass"
+        android:layout_below="@+id/text_name"
+        android:layout_toEndOf="@+id/itemImage"
+        android:textColor="#050505"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textHeroFaction"
+        android:layout_below="@+id/textHeroClass"
+        android:layout_toEndOf="@+id/itemImage"
+        android:textColor="#050505"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textHeroHp"
+        android:layout_below="@+id/textHeroFaction"
+        android:layout_toEndOf="@+id/itemImage"
+        android:textColor="#050505"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</RelativeLayout>

@@ -36,7 +36,7 @@ public class battleActivity extends AppCompatActivity {
                 //battleActivity.battleTick();
                 battleTick();
             }
-        }, 2000, 2000);
+        }, 10000, 10000);
     }
 
     @Override
@@ -115,7 +115,7 @@ public class battleActivity extends AppCompatActivity {
                         }
                     }
                 }
-                //populateListView();
+                populateListView();
             }
         });
     }
