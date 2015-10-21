@@ -37,7 +37,6 @@ public class newHero extends Activity {
                 valid = false;
             }
 
-<<<<<<< HEAD
         if (Integer.parseInt(manaText.getText().toString()) < 0) {
             Toast.makeText(this, "Az varázserő nem lehet 0-nál kissebb!", Toast.LENGTH_LONG).show();
             valid = false;
@@ -45,15 +44,13 @@ public class newHero extends Activity {
             Toast.makeText(this, "Az varázserő nem lehet 20-nál nagyobb!", Toast.LENGTH_LONG).show();
             valid = false;
         }
-=======
             if (Integer.parseInt(manaText.getText().toString()) < 0) {
                 Toast.makeText(this, "Az varázserő nem lehet 0-nál kissebb!", Toast.LENGTH_LONG).show();
                 valid = false;
-            } else if (Integer.parseInt(hpText.getText().toString()) > 20) {
+            } else if (Integer.parseInt(manaText.getText().toString()) > 20) {
                 Toast.makeText(this, "Az varázserő nem lehet 20-nál nagyobb!", Toast.LENGTH_LONG).show();
                 valid = false;
             }
->>>>>>> 85ceed9f2bcadab20e88bf268f1d5adab1841c65
 
             if (Integer.parseInt(wpnDmgText.getText().toString()) < 1) {
                 Toast.makeText(this, "Az fegyver sebzése nem lehet 1-nél kissebb!", Toast.LENGTH_LONG).show();
